@@ -1,0 +1,22 @@
+import = [
+    "~/.config/alacritty/themes/wilmersdorf.toml"
+]
+
+[window]
+
+opacity = 1
+
+padding.x = 10
+padding.y = 10
+
+decorations_theme_variant =  "Light"
+
+[font]
+
+normal.family = "Iosevka Fixed Extralight"
+bold.family = "Iosevka Fixed Light"
+italic.family = "Iosevka Fixed Extralight"
+bold_italic.family = "Iosevka Fixed Light"
+
+size = 20.0
+

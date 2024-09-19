@@ -1,0 +1,76 @@
+# This is Git's per-user configuration file.
+[user]
+	name = O.Tkalenko
+	email = oleksandrt@cynet.com
+[core]
+	editor = mcedit
+	pager = delta
+[alias]
+	pnew = push -u origin HEAD
+	lgg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
+    lg = !"git lg1"
+    lg1 = !"git lg1-specific --all"
+    lg2 = !"git lg2-specific --all"
+    lg3 = !"git lg3-specific --all"
+    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+[include]
+	path = ~/.config/color_schemes/delta.themes.gitconfig
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	features = "arctic-fox-v2"
+[delta "arctic-fox-v2"]
+    # author: https://github.com/anthony-halim
+    dark = true
+    syntax-theme = Nord
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    file-style = omit
+    hunk-header-decoration-style = "#5E81AC" ul
+    hunk-header-file-style = blue ul bold
+    hunk-header-line-number-style = yellow box bold
+    hunk-header-style = file line-number syntax bold italic
+    plus-style = brightgreen "#364f1f"
+    minus-style = brightred "#4f362f"
+    line-numbers = true
+    line-numbers-minus-style = brightred
+    line-numbers-plus-style = brightgreen
+    line-numbers-left-style = "#5E81AC"
+    line-numbers-right-style = "#5E81AC"
+    line-numbers-zero-style = "#4C566A"
+    zero-style = syntax
+    whitespace-error-style = black bold
+    blame-code-style = syntax
+    blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+    blame-palette = "#2E3440" "#3B4252" "#434C5E"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = yellow bold
+    merge-conflict-ours-diff-header-decoration-style = "#5E81AC" box
+    merge-conflict-theirs-diff-header-style = yellow bold
+    merge-conflict-theirs-diff-header-decoration-style = "#5E81AC" box
+[merge]
+	conflictstyle = diff3
+	tool = sublime_merge
+[mergetool "sublime_merge"]
+	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+	keepBackup = false
+	keepTemporaries = false
+	trustExitCode = false
+	prompt = false
+[diff]
+	colorMoved = default
+	tool = sublime_merge
+[difftool]
+	prompt = false
+[difftool "sublime_merge"]
+	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$LOCAL" "$REMOTE"
+	keepBackup = false
+	keepTemporaries = false
+	trustExitCode = false
