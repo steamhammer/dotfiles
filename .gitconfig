@@ -58,7 +58,7 @@
 	conflictstyle = diff3
 	tool = sublime_merge
 [mergetool "sublime_merge"]
-	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+	cmd = "/opt/homebrew/bin/smerge" "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
 	keepBackup = false
 	keepTemporaries = false
 	trustExitCode = false
@@ -69,7 +69,7 @@
 [difftool]
 	prompt = false
 [difftool "sublime_merge"]
-	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$LOCAL" "$REMOTE"
+	cmd = "/opt/homebrew/bin/smerge" "$LOCAL" "$REMOTE"
 	keepBackup = false
 	keepTemporaries = false
 	trustExitCode = false
