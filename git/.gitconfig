@@ -1,20 +1,19 @@
-# This is Git's per-user configuration file.
 [user]
 	name = O.Tkalenko
-	email = oleksandrt@cynet.com
+	email = oleksandr.tkalenko@gmail.com
 [core]
 	editor = mcedit
 	pager = delta
 [alias]
 	pnew = push -u origin HEAD
 	lgg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
-    lg = !"git lg1"
-    lg1 = !"git lg1-specific --all"
-    lg2 = !"git lg2-specific --all"
-    lg3 = !"git lg3-specific --all"
-    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+	lg = !"git lg1"
+	lg1 = !"git lg1-specific --all"
+	lg2 = !"git lg2-specific --all"
+	lg3 = !"git lg3-specific --all"
+	lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+	lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 [include]
 	path = ~/.config/color_schemes/delta.themes.gitconfig
 [interactive]
@@ -22,6 +21,9 @@
 [delta]
 	navigate = true
 	features = "arctic-fox-v2"
+	side-by-side = true
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 [delta "arctic-fox-v2"]
     # author: https://github.com/anthony-halim
     dark = true
@@ -33,11 +35,12 @@
     file-renamed-label = [->]
     file-style = omit
     hunk-header-decoration-style = "#5E81AC" ul
-    hunk-header-file-style = blue ul bold
+    hunk-header-file-style = purple ul bold
     hunk-header-line-number-style = yellow box bold
     hunk-header-style = file line-number syntax bold italic
     plus-style = brightgreen "#364f1f"
     minus-style = brightred "#4f362f"
+    minus-emph-style = "#df8f88" "#7f3a2f"
     line-numbers = true
     line-numbers-minus-style = brightred
     line-numbers-plus-style = brightgreen
@@ -59,7 +62,7 @@
 	conflictstyle = diff3
 	tool = sublime_merge
 [mergetool "sublime_merge"]
-	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+	cmd = "/opt/homebrew/bin/smerge" "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
 	keepBackup = false
 	keepTemporaries = false
 	trustExitCode = false
@@ -70,7 +73,7 @@
 [difftool]
 	prompt = false
 [difftool "sublime_merge"]
-	cmd = "/Applications/Sublime_Merge.app/Contents/SharedSupport/bin/smerge" "$LOCAL" "$REMOTE"
+	cmd = "/opt/homebrew/bin/smerge" "$LOCAL" "$REMOTE"
 	keepBackup = false
 	keepTemporaries = false
 	trustExitCode = false
